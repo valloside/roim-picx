@@ -1,8 +1,8 @@
 import { error } from 'itty-router-extras';
 
 export interface Env {
+  AUTH_TOKEN: string
   BASE_URL: string
-  XK: KVNamespace
   PICX: R2Bucket
 }
 
