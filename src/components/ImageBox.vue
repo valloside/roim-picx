@@ -45,7 +45,7 @@
 					<el-tooltip :content="src" placement="top-start">
 						<div
 							class="flex-1 flex items-center justify-center cursor-pointer"
-							@click="copyLink(src)"
+							@click="copyLink(copyUrl)"
 						>
 							<font-awesome-icon :icon="faCopy" class="mr-2" />
 							链接
@@ -87,6 +87,7 @@ import LoadingOverlay from '../components/LoadingOverlay.vue'
 
 const props = defineProps<{
 	src: string
+	copyUrl:string
 	name: string
 	size: number
 	mode: 'converted' | 'uploaded'

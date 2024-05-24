@@ -75,6 +75,7 @@ router.post('/list', auth, async (req : Request, env : Env) => {
     const urls = objs.map(it => {
         return <ImgItem> {
             url: `${env.BASE_URL}/rest/${it.key}`,
+            copyUrl: `${env.COPY_URL}/${it.key}`,
             key: it.key,
             size: it.size
         }
@@ -112,6 +113,7 @@ router.post('/upload',  auth, async (req: Request, env : Env) => {
                 key: object.key,
                 size: object.size,
                 url: `${env.BASE_URL}/rest/${object.key}`,
+                copyUrl: `${env.COPY_URL}/${object.key}`,
                 filename: item.name
             })
         }

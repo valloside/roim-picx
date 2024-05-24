@@ -3,6 +3,7 @@ import { error } from 'itty-router-extras';
 export interface Env {
   AUTH_TOKEN: string
   BASE_URL: string
+  COPY_URL: string
   PICX: R2Bucket
 }
 

@@ -7,6 +7,7 @@ export interface Result {
 export interface ImgItem {
     key : string
     url : string
+    copyUrl: string
     size: number
     filename ?: string
 }
