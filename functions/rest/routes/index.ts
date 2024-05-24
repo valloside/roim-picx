@@ -100,7 +100,7 @@ router.post('/upload',  auth, async (req: Request, env : Env) => {
             continue
         }
         const time = new Date().getTime()
-        const filename = await getFileName(fileType, time)
+        const filename = item.name
         const header = new Headers()
         header.set("content-type", fileType)
         header.set("content-length", `${item.size}`)
@@ -171,7 +171,7 @@ router.delete("/",  auth, async (req : Request, env: Env) => {
 
 // image detail
 router.get("/:id+", async (req : Request, env : Env) => {
-    let id = req.params.id
+    let id = decodeURIComponent(req.params.id)
     const range = parseRange(req.headers.get('range'))
     const object = await env.PICX.get(id, {
         range,
